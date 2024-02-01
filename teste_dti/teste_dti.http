@@ -1,0 +1,6 @@
+@teste_dti_HostAddress = http://localhost:5155
+
+GET {{teste_dti_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,65 @@
+.maindiv {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 50%;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.secdiv {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 50%;
+  background-color: white;
+  padding: 20px;
+  margin: 3px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.inputNome {
+  margin: 5px;
+}
+
+.inputData {
+  margin: 5px;
+}
+
+.lista {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  align-self: center;
+  margin: 0;
+}
+
+label {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  margin: 5px;
+  width: 40%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    color: white;
+    background-color: black;
+  }
+}
