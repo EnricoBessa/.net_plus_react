@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FVqljjrVhMEeSNtb5wDhgVTTvXrJiC/B29r0C9Wx1jj9dgAcHTQd0zeOALsA4Qlgg3fduMDwliq2QQ6XPxcqyw==",
+  "dgSpecHash": "KehupmayPbuLqXJZ0E8zt5PP/dp1069s/j4bvJ7WJGEaqEuc2aVPcFibp4AHWUKiC94IG8qt0DlZrvcRFnAiyA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\enric\\Documents\\procura de emprego\\teste_dti\\teste_dti.csproj",
+  "projectFilePath": "C:\\Users\\enric\\Documents\\GitHub\\.net_plus_react\\teste_dti\\teste_dti.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\enric\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\enric\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.1\\microsoft.aspnetcore.openapi.8.0.1.nupkg.sha512",

@@ -8,28 +8,46 @@ interface Item {
 }
 
 const App: React.FC = () => {
-  const [items, setItems] = useState<Item[]>([]);
+  const [dadosAgrupados, setDadosAgrupados] = useState<{ [key: string]: Item[] }>({});
   const [nome, setNome] = useState('');
   const [dataCriacao, setDataCriacao] = useState('');
 
-  useEffect(() => {
-    axios.get('http://localhost:5155/lembrete')
-      .then(response => setItems(response.data))
+  const agruparPorData = (response: Item[]) => {
+    const agrupado: { [key: string]: Item[] } = {};
+    response.forEach((item) => {
+      const data = new Date(item.dataCriacao).toLocaleDateString();
+      if (!agrupado[data]) {
+        agrupado[data] = [];
+      }
+      agrupado[data].push(item);
+    });
+
+    setDadosAgrupados(agrupado);
+  };
+
+  const handleGetItems = () => {
+    axios.get('http://localhost:5155/api/lembrete')
+      .then(response => agruparPorData(response.data))
       .catch(error => console.error('Erro ao obter itens:', error));
+  }
+
+  useEffect(() => {
+    handleGetItems()
   }, []);
 
   const handleAddItem = () => {
-    axios.post('http://localhost:5155/lembrete', { nome, dataCriacao })
-      .then(response => setItems([...items, response.data]))
+    axios.post('http://localhost:5155/api/lembrete', { nome, dataCriacao })
+      .then(() => {
+        handleGetItems();
+        setNome('');
+        setDataCriacao('');
+      })
       .catch(error => console.error('Erro ao adicionar item:', error));
-
-    setNome('');
-    setDataCriacao('');
   };
 
   const handleDelete = (itemId: number) => {
-    axios.delete(`http://localhost:5155/lembrete/${itemId}`)
-      .then(() => setItems(items.filter(item => item.id !== itemId)))
+    axios.delete(`http://localhost:5155/api/lembrete/${itemId}`)
+      .then(() => handleGetItems())
       .catch(error => console.error('Erro ao deletar item:', error));
   };
 
@@ -43,17 +61,21 @@ const App: React.FC = () => {
         </label>
         <label>
           Data de Criação:
-          <input className='inputData' type="text" value={dataCriacao} onChange={e => setDataCriacao(e.target.value)} />
+          <input className='inputData' type="date" value={dataCriacao} onChange={e => setDataCriacao(e.target.value)} />
         </label>
         <button onClick={handleAddItem}>Adicionar</button>
       </div>
       <p className='lista'>Lista de Lembretes</p>
-      <ul>
-        {items.map(item => (
-          <li key={item.id}>
-            {item.nome} - {item.dataCriacao}
-            <button onClick={() => handleDelete(item.id)}>Deletar</button>
-          </li>
+      <ul className='ulLista'>
+        {Object.keys(dadosAgrupados).map((data, index) => (
+          <div key={index}>
+            <h3>{data}</h3>
+            <ul>
+              {dadosAgrupados[data].map((item) => (
+                <li key={item.id}>{item.nome} <button onClick={() => handleDelete(item.id)}>Deletar</button></li>
+              ))}
+            </ul>
+          </div>
         ))}
       </ul>
     </div>

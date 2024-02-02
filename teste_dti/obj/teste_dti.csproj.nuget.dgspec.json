@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\enric\\Documents\\procura de emprego\\teste_dti\\teste_dti.csproj": {}
+    "C:\\Users\\enric\\Documents\\GitHub\\.net_plus_react\\teste_dti\\teste_dti.csproj": {}
   },
   "projects": {
-    "C:\\Users\\enric\\Documents\\procura de emprego\\teste_dti\\teste_dti.csproj": {
+    "C:\\Users\\enric\\Documents\\GitHub\\.net_plus_react\\teste_dti\\teste_dti.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\enric\\Documents\\procura de emprego\\teste_dti\\teste_dti.csproj",
+        "projectUniqueName": "C:\\Users\\enric\\Documents\\GitHub\\.net_plus_react\\teste_dti\\teste_dti.csproj",
         "projectName": "teste_dti",
-        "projectPath": "C:\\Users\\enric\\Documents\\procura de emprego\\teste_dti\\teste_dti.csproj",
+        "projectPath": "C:\\Users\\enric\\Documents\\GitHub\\.net_plus_react\\teste_dti\\teste_dti.csproj",
         "packagesPath": "C:\\Users\\enric\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\enric\\Documents\\procura de emprego\\teste_dti\\obj\\",
+        "outputPath": "C:\\Users\\enric\\Documents\\GitHub\\.net_plus_react\\teste_dti\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\enric\\AppData\\Roaming\\NuGet\\NuGet.Config"
